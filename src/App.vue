@@ -1,7 +1,6 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 
 <template>
-  <HelloWorld />
+  <!-- Punto de entrada: carga la vista según la ruta activa -->
+  <router-view />
 </template>
