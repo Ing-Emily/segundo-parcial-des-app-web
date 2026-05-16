@@ -228,10 +228,10 @@ main
 
 ## ✅ Checklist final antes de sustentar
 
-- [ ] El login valida contra `usuarios.json` y muestra alerta en error
-- [ ] El dashboard carga rutas hijas sin perder Navbar/Sidebar
+- [x ] El login valida contra `usuarios.json` y muestra alerta en error
+- [ x] El dashboard carga rutas hijas sin perder Navbar/Sidebar
 - [ ] El CRUD de productos funciona completo (crear, leer, editar, eliminar) con localStorage
-- [ ] Los productos se precargan desde `products.json` (mínimo 10)
+- [x ] Los productos se precargan desde `products.json` (mínimo 10)
 - [ ] `ProductCardComponent` usa props y emite eventos
 - [ ] El diseño es responsivo y usa Bootstrap en toda la app
 - [ ] El README está completo con todos los puntos requeridos
