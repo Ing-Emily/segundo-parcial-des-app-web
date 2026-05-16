@@ -10,16 +10,24 @@ export default {
     HeaderComponent,
     SidebarComponent,
     FooterComponent
+  },
+  methods:{
+  logout(){
+    localStorage.removeItem('usuario')
+    this.$router.push('/login')
   }
-
 }
 
+
+}
 </script>
 
 <template>
 
 <HeaderComponent />
-
+<button @click="logout" class="btn btn-dark">
+  Cerrar sesión
+</button>
 <div class="d-flex">
 
   <SidebarComponent />

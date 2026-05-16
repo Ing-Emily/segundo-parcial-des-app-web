@@ -1,14 +1,72 @@
 [
-  {"nombre":"Carne de Res","precio":20000,"descripcion":"Carne fresca de res","categoria":"carnes","imagen":"img/carne_res.jpg"},
-  {"nombre":"Carne Molida","precio":18000,"descripcion":"Carne molida fresca","categoria":"carnes","imagen":"img/carnitamolida.jpg"},
-  {"nombre":"Costilla","precio":22000,"descripcion":"Costilla de res","categoria":"carnes","imagen":"img/costillita.jpg"},
-  {"nombre":"Especias","precio":5000,"descripcion":"Condimentos naturales","categoria":"otros","imagen":"img/especiecitas.jpg"},
-  {"nombre":"Hígado","precio":10000,"descripcion":"Hígado fresco","categoria":"carnes","imagen":"img/higadito.jpg"},
-  {"nombre":"Huevos","precio":12000,"descripcion":"Huevos frescos","categoria":"huevos","imagen":"img/huevitos.jpg"},
-  {"nombre":"Huevos Premium","precio":15000,"descripcion":"Huevos de alta calidad","categoria":"huevos","imagen":"img/huevos1.jpg"},
-  {"nombre":"Lomo de Cerdo","precio":19000,"descripcion":"Carne de cerdo","categoria":"carnes","imagen":"img/lomitodecerdo.jpg"},
-  {"nombre":"Pollo","precio":14000,"descripcion":"Pollo fresco","categoria":"carnes","imagen":"img/pollito.jpg"},
-  {"nombre":"Pollo Entero","precio":13000,"descripcion":"Pollo sin procesar","categoria":"carnes","imagen":"img/pollitocrudo.jpg"},
-  {"nombre":"Queso","precio":15000,"descripcion":"Queso campesino","categoria":"quesos","imagen":"img/quesito.jpg"},
-  {"nombre":"Suero","precio":10000,"descripcion":"Suero costeño","categoria":"quesos","imagen":"img/suerito.jpg"}
+  {
+    "nombre": "Carne de Res",
+    "precio": 20000,
+    "descripcion": "Carne fresca de res",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+  },
+  {
+    "nombre": "Carne Molida",
+    "precio": 18000,
+    "descripcion": "Carne molida fresca",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1617191519105-d07b98b10de6"
+  },
+  {
+    "nombre": "Costilla",
+    "precio": 22000,
+    "descripcion": "Costilla de res",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1558030006-450675393462"
+  },
+  {
+    "nombre": "Especias",
+    "precio": 5000,
+    "descripcion": "Condimentos naturales",
+    "categoria": "otros",
+    "imagen": "https://images.unsplash.com/photo-1505576399279-565b52d4ac71"
+  },
+  {
+    "nombre": "Hígado",
+    "precio": 10000,
+    "descripcion": "Hígado fresco",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db"
+  },
+  {
+    "nombre": "Huevos",
+    "precio": 12000,
+    "descripcion": "Huevos frescos",
+    "categoria": "huevos",
+    "imagen": "https://images.unsplash.com/photo-1517959105821-eaf2591984b0"
+  },
+  {
+    "nombre": "Huevos Premium",
+    "precio": 15000,
+    "descripcion": "Huevos de alta calidad",
+    "categoria": "huevos",
+    "imagen": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
+  },
+  {
+    "nombre": "Lomo de Cerdo",
+    "precio": 19000,
+    "descripcion": "Carne de cerdo",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1604908176997-431dfb2c8c88"
+  },
+  {
+    "nombre": "Pollo",
+    "precio": 14000,
+    "descripcion": "Pollo fresco",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1604908177522-432c0d06b9c4"
+  },
+  {
+    "nombre": "Pollo Entero",
+    "precio": 13000,
+    "descripcion": "Pollo sin procesar",
+    "categoria": "carnes",
+    "imagen": "https://images.unsplash.com/photo-1601050690597-df0568f70950"
+  }
 ]
