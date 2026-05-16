@@ -1,16 +1,6 @@
 [
   {
-    "id": 1,
-    "usuario": "admin",
-    "password": "1234",
-    "nombre": "Administrador",
-    "rol": "admin"
-  },
-  {
-    "id": 2,
-    "usuario": "empleado",
-    "password": "abcd",
-    "nombre": "Empleado Salmendra",
-    "rol": "empleado"
+    "user": "admin",
+    "password": "1234"
   }
 ]
