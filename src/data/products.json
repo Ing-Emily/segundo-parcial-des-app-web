@@ -35,12 +35,12 @@
     "imagen": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db"
   },
   {
-    "nombre": "Huevos",
-    "precio": 12000,
-    "descripcion": "Huevos frescos",
-    "categoria": "huevos",
-    "imagen": "https://images.unsplash.com/photo-1517959105821-eaf2591984b0"
-  },
+  "nombre": "Huevos",
+  "precio": 12000,
+  "descripcion": "Huevos frescos",
+  "categoria": "huevos",
+  "imagen": "https://images.pexels.com/photos/162712/egg-white-food-protein-162712.jpeg"
+},
   {
     "nombre": "Huevos Premium",
     "precio": 15000,
@@ -48,20 +48,20 @@
     "categoria": "huevos",
     "imagen": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
   },
-  {
-    "nombre": "Lomo de Cerdo",
-    "precio": 19000,
-    "descripcion": "Carne de cerdo",
-    "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1604908176997-431dfb2c8c88"
-  },
-  {
-    "nombre": "Pollo",
-    "precio": 14000,
-    "descripcion": "Pollo fresco",
-    "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1604908177522-432c0d06b9c4"
-  },
+{
+  "nombre": "Lomo de Cerdo",
+  "precio": 19000,
+  "descripcion": "Carne de cerdo fresca",
+  "categoria": "carnes",
+  "imagen": "https://images.pexels.com/photos/1927377/pexels-photo-1927377.jpeg"
+},
+{
+  "nombre": "Pollo",
+  "precio": 14000,
+  "descripcion": "Pollo fresco",
+  "categoria": "carnes",
+  "imagen": "https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg"
+},
   {
     "nombre": "Pollo Entero",
     "precio": 13000,
