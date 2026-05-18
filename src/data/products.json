@@ -4,21 +4,21 @@
     "precio": 20000,
     "descripcion": "Carne fresca de res",
     "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+    "imagen": "https://images.unsplash.com/photo-1690983330536-3b0089d07cf9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "nombre": "Carne Molida",
     "precio": 18000,
     "descripcion": "Carne molida fresca",
     "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1617191519105-d07b98b10de6"
+    "imagen": "https://media.istockphoto.com/id/2200772576/photo/fresh-ground-beef-with-herbs-and-vegetables-on-rustic-wooden-table.jpg?s=1024x1024&w=is&k=20&c=gSgnwbdWNuRBvRtN1AEkJyLhfdGErz_mA0oHxlEr7oQ="
   },
   {
     "nombre": "Costilla",
     "precio": 22000,
     "descripcion": "Costilla de res",
     "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1558030006-450675393462"
+    "imagen": "https://plus.unsplash.com/premium_photo-1664478272084-532c1bfebd25?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "nombre": "Especias",
@@ -32,7 +32,7 @@
     "precio": 10000,
     "descripcion": "Hígado fresco",
     "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db"
+    "imagen": "https://images.unsplash.com/photo-1624749731632-55baff07f18c?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
   "nombre": "Huevos",
@@ -46,7 +46,7 @@
     "precio": 15000,
     "descripcion": "Huevos de alta calidad",
     "categoria": "huevos",
-    "imagen": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc"
+    "imagen": "https://images.unsplash.com/photo-1506976785307-8732e854ad03?q=80&w=1486&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
 {
   "nombre": "Lomo de Cerdo",
@@ -60,13 +60,13 @@
   "precio": 14000,
   "descripcion": "Pollo fresco",
   "categoria": "carnes",
-  "imagen": "https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg"
+  "imagen": "https://images.unsplash.com/photo-1682991136736-a2b44623eeba?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 },
   {
     "nombre": "Pollo Entero",
     "precio": 13000,
     "descripcion": "Pollo sin procesar",
     "categoria": "carnes",
-    "imagen": "https://images.unsplash.com/photo-1601050690597-df0568f70950"
+    "imagen": "https://images.pexels.com/photos/616354/pexels-photo-616354.jpeg"
   }
 ]
