@@ -8,27 +8,17 @@ import {
   saveProducts
 }
 from '../services/ProductService'
-
 export default {
-
   components: {
-
     ProductCardComponent
-
   },
 
   data(){
-
     return {
-
       productos: [],
-
       editando: null,
-
       mostrarFormulario: false,
-
       esAdmin: false,
-
       nuevoProducto: {
 
         nombre:'',
@@ -36,15 +26,11 @@ export default {
         descripcion:'',
         categoria:'',
         imagen:''
-
       }
-
     }
-
   },
 
   mounted(){
-
     this.productos = getProducts()
 
     const usuario =
@@ -52,88 +38,57 @@ export default {
 
     this.esAdmin =
     (usuario === 'admin')
-
   },
 
   methods: {
-
     toggleFormulario(){
-
       this.mostrarFormulario =
       !this.mostrarFormulario
-
     },
 
     agregarProducto(){
-
       this.productos.push({
-
         ...this.nuevoProducto
-
       })
 
       saveProducts(this.productos)
-
       this.limpiarFormulario()
-
     },
 
     eliminar(index){
-
       this.productos.splice(index,1)
-
       saveProducts(this.productos)
-
     },
 
     cargarEdicion(index){
-
       this.editando = index
-
       this.nuevoProducto = {
-
         ...this.productos[index]
-
       }
 
       this.mostrarFormulario = true
-
     },
-
     guardarEdicion(){
-
       this.productos[this.editando] = {
-
         ...this.nuevoProducto
-
       }
 
       saveProducts(this.productos)
-
       this.editando = null
-
       this.limpiarFormulario()
-
     },
 
     limpiarFormulario(){
-
       this.nuevoProducto = {
-
         nombre:'',
         precio:'',
         descripcion:'',
         categoria:'',
         imagen:''
-
       }
-
       this.mostrarFormulario = false
-
     }
-
   }
-
 }
 
 </script>
@@ -141,9 +96,7 @@ export default {
 <template>
 
 <div>
-
   <div class="page-header">
-
     <div>
 
       <h2 class="page-title">
@@ -151,9 +104,7 @@ export default {
       </h2>
 
       <p class="page-subtitle">
-
         Gestión de productos SalMendra
-
       </p>
 
     </div>
@@ -188,7 +139,6 @@ export default {
         ? 'Editar producto'
         : 'Nuevo producto'
       }}
-
     </h4>
 
     <div class="row">
@@ -214,7 +164,6 @@ export default {
       </div>
 
       <div class="col-md-6 mb-3">
-
         <input
           v-model="nuevoProducto.categoria"
           class="form-control"
@@ -222,7 +171,6 @@ export default {
         >
 
       </div>
-
       <div class="col-md-6 mb-3">
 
         <input
@@ -230,7 +178,6 @@ export default {
           class="form-control"
           placeholder="URL imagen"
         >
-
       </div>
 
       <div class="col-12 mb-3">
@@ -240,7 +187,6 @@ export default {
           class="form-control"
           placeholder="Descripción"
         ></textarea>
-
       </div>
 
       <div class="col-12">
@@ -250,9 +196,7 @@ export default {
           class="btn btn-success"
           @click="agregarProducto"
         >
-
           Guardar producto
-
         </button>
 
         <button
@@ -260,37 +204,23 @@ export default {
           class="btn btn-warning"
           @click="guardarEdicion"
         >
-
           Guardar cambios
-
         </button>
 
       </div>
-
     </div>
-
   </div>
-
   <div class="products-grid">
 
     <ProductCardComponent
-
       v-for="(producto,index) in productos"
-
       :key="index"
-
       :producto="producto"
-
       :esAdmin="esAdmin"
-
       @editar="cargarEdicion(index)"
-
       @eliminar="eliminar(index)"
-
     />
 
   </div>
-
 </div>
-
 </template>

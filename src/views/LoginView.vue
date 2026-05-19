@@ -1,33 +1,22 @@
 <script>
 
 export default {
-
   data(){
-
     return {
-
       usuario:'',
-
       password:'',
-
       error:''
-
     }
-
   },
 
   methods: {
 
     login(){
-
       if(
-
         this.usuario === 'admin'
         &&
         this.password === '1234'
-
       ){
-
         localStorage.setItem(
           'usuario',
           'admin'
@@ -36,15 +25,11 @@ export default {
         this.$router.push(
           '/dashboard/productos'
         )
-
       }
-
       else if(
-
         this.usuario === 'usuario'
         &&
         this.password === '1234'
-
       ){
 
         localStorage.setItem(
@@ -55,7 +40,6 @@ export default {
         this.$router.push(
           '/dashboard/productos'
         )
-
       }
 
       else{
@@ -64,23 +48,16 @@ export default {
         'Credenciales incorrectas'
 
       }
-
     }
-
   }
-
 }
-
 </script>
 
 <template>
 
 <div class="login-wrapper">
-
   <div class="login-card">
-
     <div class="login-left">
-
       <div>
 
         <h1>SalMendra</h1>
@@ -91,15 +68,11 @@ export default {
         </p>
 
       </div>
-
     </div>
-
     <div class="login-right">
 
       <h3 class="mb-4">
-
         Iniciar sesión
-
       </h3>
 
       <input
@@ -119,21 +92,15 @@ export default {
         class="btn btn-danger w-100"
         @click="login"
       >
-
         Ingresar
-
       </button>
 
       <p class="text-danger mt-3">
-
         {{ error }}
-
       </p>
 
     </div>
-
   </div>
-
 </div>
 
 </template>
