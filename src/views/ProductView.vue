@@ -1,79 +1,135 @@
 <script>
 
+import ProductCardComponent
+from '../components/ProductCardComponent.vue'
+
 import {
   getProducts,
   saveProducts
-} from '../services/ProductService'
+}
+from '../services/ProductService'
 
 export default {
 
+  components: {
+
+    ProductCardComponent
+
+  },
+
   data(){
+
     return {
+
       productos: [],
 
       editando: null,
 
+      mostrarFormulario: false,
+
       esAdmin: false,
 
-      nuevoProducto:{
+      nuevoProducto: {
+
         nombre:'',
         precio:'',
         descripcion:'',
         categoria:'',
         imagen:''
+
       }
+
     }
+
   },
 
-mounted(){
-  this.productos = getProducts()
+  mounted(){
 
-  const user = localStorage.getItem('usuario')
+    this.productos = getProducts()
 
-  this.esAdmin = (user === 'admin')
-},
+    const usuario =
+    localStorage.getItem('usuario')
+
+    this.esAdmin =
+    (usuario === 'admin')
+
+  },
 
   methods: {
 
+    toggleFormulario(){
+
+      this.mostrarFormulario =
+      !this.mostrarFormulario
+
+    },
+
     agregarProducto(){
+
       this.productos.push({
+
         ...this.nuevoProducto
+
       })
+
       saveProducts(this.productos)
+
       this.limpiarFormulario()
+
     },
 
     eliminar(index){
+
       this.productos.splice(index,1)
+
       saveProducts(this.productos)
+
     },
 
     cargarEdicion(index){
+
       this.editando = index
+
       this.nuevoProducto = {
+
         ...this.productos[index]
+
       }
+
+      this.mostrarFormulario = true
+
     },
 
     guardarEdicion(){
+
       this.productos[this.editando] = {
+
         ...this.nuevoProducto
+
       }
 
       saveProducts(this.productos)
 
       this.editando = null
+
       this.limpiarFormulario()
+
     },
 
     limpiarFormulario(){
+
       this.nuevoProducto = {
+
         nombre:'',
         precio:'',
         descripcion:'',
         categoria:'',
         imagen:''
+
       }
+
+      this.mostrarFormulario = false
+
     }
 
   }
@@ -84,83 +140,157 @@ mounted(){
 
 <template>
 
-<h2 class="mb-4">Productos</h2>
-  <div v-if="esAdmin">
-    <!-- formulario -->
-    <div class="mb-3">
+<div>
 
-    <input v-model="nuevoProducto.nombre" class="form-control mb-2" placeholder="Nombre">
-    <input v-model="nuevoProducto.precio" class="form-control mb-2" placeholder="Precio">
-    <input v-model="nuevoProducto.descripcion" class="form-control mb-2" placeholder="Descripción">
-    <input v-model="nuevoProducto.categoria" class="form-control mb-2" placeholder="Categoría">
-    <input v-model="nuevoProducto.imagen" class="form-control mb-2" placeholder="URL de imagen">
+  <div class="page-header">
+
+    <div>
+
+      <h2 class="page-title">
+        Productos
+      </h2>
+
+      <p class="page-subtitle">
+
+        Gestión de productos SalMendra
+
+      </p>
+
+    </div>
+
+    <button
+      v-if="esAdmin"
+      class="btn btn-danger"
+      @click="toggleFormulario"
+    >
+
+      <i class="bi bi-plus-circle"></i>
+
+      {{
+        mostrarFormulario
+        ? 'Cerrar formulario'
+        : 'Agregar producto'
+      }}
+
+    </button>
 
   </div>
+
+  <div
+    v-if="mostrarFormulario && esAdmin"
+    class="crud-form"
+  >
+
+    <h4 class="mb-4">
+
+      {{
+        editando !== null
+        ? 'Editar producto'
+        : 'Nuevo producto'
+      }}
+
+    </h4>
+
+    <div class="row">
+
+      <div class="col-md-6 mb-3">
+
+        <input
+          v-model="nuevoProducto.nombre"
+          class="form-control"
+          placeholder="Nombre"
+        >
+
+      </div>
+
+      <div class="col-md-6 mb-3">
+
+        <input
+          v-model="nuevoProducto.precio"
+          class="form-control"
+          placeholder="Precio"
+        >
+
+      </div>
+
+      <div class="col-md-6 mb-3">
+
+        <input
+          v-model="nuevoProducto.categoria"
+          class="form-control"
+          placeholder="Categoría"
+        >
+
+      </div>
+
+      <div class="col-md-6 mb-3">
+
+        <input
+          v-model="nuevoProducto.imagen"
+          class="form-control"
+          placeholder="URL imagen"
+        >
+
+      </div>
+
+      <div class="col-12 mb-3">
+
+        <textarea
+          v-model="nuevoProducto.descripcion"
+          class="form-control"
+          placeholder="Descripción"
+        ></textarea>
+
+      </div>
+
+      <div class="col-12">
+
+        <button
+          v-if="editando === null"
+          class="btn btn-success"
+          @click="agregarProducto"
+        >
+
+          Guardar producto
+
+        </button>
+
+        <button
+          v-else
+          class="btn btn-warning"
+          @click="guardarEdicion"
+        >
+
+          Guardar cambios
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="products-grid">
+
+    <ProductCardComponent
+
+      v-for="(producto,index) in productos"
+
+      :key="index"
+
+      :producto="producto"
+
+      :esAdmin="esAdmin"
+
+      @editar="cargarEdicion(index)"
+
+      @eliminar="eliminar(index)"
+
+    />
+
+  </div>
+
 </div>
-
-
-
-
-<!-- 🔘 BOTONES -->
-<button
-  v-if="editando !== null"
-  @click="guardarEdicion"
-  class="btn btn-success mb-3"
->
-  Guardar cambios
-</button>
-
-<button v-if="esAdmin" @click="agregarProducto">
-  Agregar producto
-</button>
-
-<!-- 📊 TABLA -->
-<table class="table table-striped">
-
-  <thead>
-    <tr>
-      <th>Imagen</th>
-      <th>Nombre</th>
-      <th>Precio</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr v-for="(producto,index) in productos" :key="index">
-
-  <td>
-    <img
-      :src="producto.imagen"
-      @error="e => e.target.src='https://placehold.co/60'"
-      style="width:60px; height:60px; object-fit:cover;"
-    >
-  </td>
-
-  <td>{{ producto.nombre }}</td>
-  <td>{{ producto.precio }}</td>
-
-  <td>
-
-<button 
-  v-if="esAdmin"
-  @click="cargarEdicion(index)"
->
-      Editar
-    </button>
-
-<button 
-  v-if="esAdmin"
-  @click="eliminar(index)"
->
-      Eliminar
-    </button>
-
-  </td>
-
-</tr>
-  </tbody>
-
-</table>
 
 </template>

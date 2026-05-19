@@ -1,41 +1,37 @@
 <template>
 
-<aside class="sidebar p-3">
+<aside class="sidebar-wrapper">
 
-  <h3>Categorías</h3>
+  <div class="sidebar-section">
 
-  <ul class="list-unstyled">
+    <p class="sidebar-section-title">
+      MENÚ
+    </p>
 
-    <li>
-      <router-link to="/dashboard/productos">
-        Productos
-      </router-link>
-    </li>
+    <router-link
+      to="/dashboard/productos"
+      class="sidebar-link"
+    >
 
-    <li>
-      <router-link to="/dashboard/contacto">
-        Contacto
-      </router-link>
-    </li>
+      <i class="bi bi-grid"></i>
 
-  </ul>
+      Productos
+
+    </router-link>
+
+    <router-link
+      to="/dashboard/contacto"
+      class="sidebar-link"
+    >
+
+      <i class="bi bi-telephone"></i>
+
+      Contacto
+
+    </router-link>
+
+  </div>
 
 </aside>
 
 </template>
-
-<style scoped>
-
-.sidebar{
-  width:250px;
-  min-height:100vh;
-  background:#422020;
-  color:white;
-}
-
-a{
-  color:white;
-  text-decoration:none;
-}
-
-</style>

@@ -2,7 +2,15 @@
 
 export default {
 
-  props: ['producto']
+  props: [
+    'producto',
+    'esAdmin'
+  ],
+
+  emits: [
+    'editar',
+    'eliminar'
+  ]
 
 }
 
@@ -10,22 +18,60 @@ export default {
 
 <template>
 
-<div class="card shadow">
+<div class="product-card">
 
-  <img
-    :src="producto.imagen"
-    class="card-img-top"
-  >
+  <div class="image-container">
 
-  <div class="card-body">
+    <img
+      :src="producto.imagen"
+      class="product-image"
+      @error="e => e.target.src='https://placehold.co/400x300?text=Producto'"
+    >
 
-    <h5>{{ producto.nombre }}</h5>
+  </div>
 
-    <p>{{ producto.descripcion }}</p>
+  <div class="product-body">
 
-    <p class="fw-bold">
-      $ {{ producto.precio }}
+    <span class="product-category">
+      {{ producto.categoria }}
+    </span>
+
+    <h3 class="product-title">
+      {{ producto.nombre }}
+    </h3>
+
+    <p class="product-description">
+      {{ producto.descripcion }}
     </p>
+
+    <div class="product-footer">
+
+      <span class="product-price">
+        $ {{ producto.precio }}
+      </span>
+
+      <div
+        v-if="esAdmin"
+        class="product-actions"
+      >
+
+        <button
+          class="custom-btn warning-btn"
+          @click="$emit('editar')"
+        >
+          Editar
+        </button>
+
+        <button
+          class="custom-btn delete-btn"
+          @click="$emit('eliminar')"
+        >
+          Eliminar
+        </button>
+
+      </div>
+
+    </div>
 
   </div>
 

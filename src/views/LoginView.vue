@@ -1,16 +1,16 @@
 <script>
 
-import usuarios from '../data/usuarios.json'
-
 export default {
 
-  data() {
+  data(){
 
     return {
 
-      user: '',
-      pass: '',
-      error: ''
+      usuario:'',
+
+      password:'',
+
+      error:''
 
     }
 
@@ -18,23 +18,50 @@ export default {
 
   methods: {
 
-    login() {
+    login(){
 
-      const existe = usuarios.find(
-        u =>
-          u.user === this.user &&
-          u.password === this.pass
-      )
+      if(
 
-      if(existe){
+        this.usuario === 'admin'
+        &&
+        this.password === '1234'
 
-        localStorage.setItem('usuario', this.user)
+      ){
 
-        this.$router.push('/dashboard/productos')
+        localStorage.setItem(
+          'usuario',
+          'admin'
+        )
 
-      } else {
+        this.$router.push(
+          '/dashboard/productos'
+        )
 
-        this.error = 'Credenciales incorrectas'
+      }
+
+      else if(
+
+        this.usuario === 'usuario'
+        &&
+        this.password === '1234'
+
+      ){
+
+        localStorage.setItem(
+          'usuario',
+          'usuario'
+        )
+
+        this.$router.push(
+          '/dashboard/productos'
+        )
+
+      }
+
+      else{
+
+        this.error =
+        'Credenciales incorrectas'
 
       }
 
@@ -48,39 +75,61 @@ export default {
 
 <template>
 
-<div class="container d-flex justify-content-center align-items-center vh-100">
+<div class="login-wrapper">
 
-  <div class="card p-5 shadow">
+  <div class="login-card">
 
-    <h2 class="text-center mb-4 text-danger">
-      SalMendra
-    </h2>
+    <div class="login-left">
 
-    <input
-      v-model="user"
-      class="form-control mb-3"
-      placeholder="Usuario"
-    >
+      <div>
 
-    <input
-      v-model="pass"
-      type="password"
-      class="form-control mb-3"
-      placeholder="Contraseña"
-    >
+        <h1>SalMendra</h1>
 
-    <button
-      @click="login"
-      class="btn btn-danger"
-    >
-      Ingresar
-    </button>
+        <p>
+          Sistema administrativo
+          para gestión de productos.
+        </p>
 
-    <div
-      v-if="error"
-      class="alert alert-danger mt-3"
-    >
-      {{ error }}
+      </div>
+
+    </div>
+
+    <div class="login-right">
+
+      <h3 class="mb-4">
+
+        Iniciar sesión
+
+      </h3>
+
+      <input
+        v-model="usuario"
+        class="form-control mb-3"
+        placeholder="Usuario"
+      >
+
+      <input
+        v-model="password"
+        type="password"
+        class="form-control mb-3"
+        placeholder="Contraseña"
+      >
+
+      <button
+        class="btn btn-danger w-100"
+        @click="login"
+      >
+
+        Ingresar
+
+      </button>
+
+      <p class="text-danger mt-3">
+
+        {{ error }}
+
+      </p>
+
     </div>
 
   </div>

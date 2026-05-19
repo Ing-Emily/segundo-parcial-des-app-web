@@ -1,22 +1,19 @@
 <template>
 
-<footer class="footer">
+<footer class="footer-wrapper py-3 text-center">
 
-  <p>
-    © 2026 Tu Salsamentaria de confianza
+  <p class="footer-text mb-1">
+
+    © 2026 SalMendra - Todos los derechos reservados
+
   </p>
+
+  <small class="footer-badge">
+
+    Sistema desarrollado en Vue.js
+
+  </small>
 
 </footer>
 
 </template>
-
-<style scoped>
-
-.footer{
-  background:#3a3434;
-  color:white;
-  text-align:center;
-  padding:10px;
-}
-
-</style>
